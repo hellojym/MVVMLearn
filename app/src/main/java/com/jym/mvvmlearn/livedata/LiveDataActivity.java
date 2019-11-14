@@ -18,7 +18,7 @@ import com.jym.mvvmlearn.model.User;
  */
 public class LiveDataActivity extends AppCompatActivity {
 
-    UserLiveData user = new UserLiveData();
+    UserLiveData user = LiveDataHolder.getUserLiveData();
     TextView nameTv;
 
     @Override
@@ -30,7 +30,6 @@ public class LiveDataActivity extends AppCompatActivity {
         user.observe(this, o -> {
             nameTv.setText(user.getValue().getName());
         });
-        user.setValue(new User("小飞","17"));
     }
 
     @Override
