@@ -1,5 +1,7 @@
 package com.jym.mvvmlearn.model;
 
+import androidx.databinding.ObservableField;
+
 /**
  * 类描述：
  *
@@ -9,6 +11,7 @@ package com.jym.mvvmlearn.model;
 public class User {
     private String name;
 
+    public ObservableField<String> age = new ObservableField<>();
 
     public User() {
 

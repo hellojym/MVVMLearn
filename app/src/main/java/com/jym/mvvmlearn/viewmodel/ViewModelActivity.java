@@ -45,7 +45,7 @@ public class ViewModelActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.refresh).setOnClickListener(v -> {
-            name.setText(viewModel.user.getName());
+            name.setText(viewModel.getUser().getName());
         });
 
     }

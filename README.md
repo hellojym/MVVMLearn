@@ -11,3 +11,7 @@
 
 ### DataBinding：
 1. 用于绑定xml和vm
+
+## ViewModel一般要跟LiveData结合使用，比如：
+1. 当数据发生变化时，VC变更相应的UI
+2. fragment_1与用户交互-》修改了ViewModel数据-》fragment_2监听到数据变化-》fragment_2的UI响应数据变化

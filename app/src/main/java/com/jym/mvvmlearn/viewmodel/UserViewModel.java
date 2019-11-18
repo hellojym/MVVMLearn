@@ -14,11 +14,23 @@ import com.jym.mvvmlearn.model.User;
  */
 public class UserViewModel extends ViewModel {
 
-    User user;
+    private User user;
 
     public void setUser(String name) {
         user = new User(name);
         Log.d("MVVM","user Changed to: " + name);
+    }
+
+    public User getUser() {
+        if (user == null) {
+            fetchUserData();
+        }
+        return user;
+    }
+
+    private void fetchUserData() {
+        //网络操作获取response后
+        user = new User("ok");
     }
 
 }
