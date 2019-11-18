@@ -7,8 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jym.mvvmlearn.databinding.DataBindingActivity;
 import com.jym.mvvmlearn.livedata.LiveDataActivity;
-import com.jym.mvvmlearn.livedata.LiveDataHolder;
-import com.jym.mvvmlearn.model.User;
+import com.jym.mvvmlearn.viewmodel.ViewModelActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +21,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.viewmodel).setOnClickListener(v -> {
-//            to(ViewModelActivity.class);
-            LiveDataHolder.getUserLiveData().setValue(new User("hello"));
+            to(ViewModelActivity.class);
         });
 
         findViewById(R.id.databinding).setOnClickListener(v -> {

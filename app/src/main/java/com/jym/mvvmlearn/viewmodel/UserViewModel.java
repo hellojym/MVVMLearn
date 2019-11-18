@@ -1,5 +1,7 @@
 package com.jym.mvvmlearn.viewmodel;
 
+import android.util.Log;
+
 import androidx.lifecycle.ViewModel;
 
 import com.jym.mvvmlearn.model.User;
@@ -13,5 +15,10 @@ import com.jym.mvvmlearn.model.User;
 public class UserViewModel extends ViewModel {
 
     User user;
+
+    public void setUser(String name) {
+        user = new User(name);
+        Log.d("MVVM","user Changed to: " + name);
+    }
 
 }
