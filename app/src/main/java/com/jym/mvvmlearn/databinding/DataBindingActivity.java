@@ -24,7 +24,6 @@ public class DataBindingActivity extends AppCompatActivity {
         ActivityDatabindBinding activityDatabindBinding = DataBindingUtil.setContentView(this, R.layout.activity_databind);
         User user = new User();
         user.setName("马云");
-        user.setAge("123456");
         activityDatabindBinding.setUserInfo(user);
 
 
