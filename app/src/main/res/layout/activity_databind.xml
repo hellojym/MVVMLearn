@@ -5,11 +5,17 @@
 
     <data>
 
-        <import type="com.jym.mvvmlearn.model.User" />
+        <import type="com.jym.mvvmlearn.entities.User" />
+
+        <import type="com.jym.mvvmlearn.viewmodel.UserViewModel" />
 
         <variable
             name="userInfo"
             type="User" />
+
+        <variable
+            name="userVM"
+            type="UserViewModel" />
 
     </data>
 
@@ -33,6 +39,12 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:text="@{userInfo.age, default = 12}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@{userVM.user.name}" />
 
         <Button
             android:id="@+id/change"

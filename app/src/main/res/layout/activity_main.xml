@@ -22,5 +22,12 @@
         android:gravity="center"
         android:text="databinding"/>
 
+    <TextView
+        android:id="@+id/complete"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="完整演示"/>
+
 
 </LinearLayout>

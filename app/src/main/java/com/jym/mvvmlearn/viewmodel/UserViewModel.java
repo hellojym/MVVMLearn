@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.lifecycle.ViewModel;
 
-import com.jym.mvvmlearn.model.User;
+import com.jym.mvvmlearn.entities.User;
 
 /**
  * 类描述：

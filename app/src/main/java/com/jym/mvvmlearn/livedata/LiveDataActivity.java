@@ -9,7 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.jym.mvvmlearn.R;
-import com.jym.mvvmlearn.model.User;
+import com.jym.mvvmlearn.entities.User;
 
 import java.util.Objects;
 

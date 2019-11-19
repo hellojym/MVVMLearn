@@ -4,7 +4,7 @@ import android.util.Log;
 
 import androidx.lifecycle.MutableLiveData;
 
-import com.jym.mvvmlearn.model.User;
+import com.jym.mvvmlearn.entities.User;
 
 
 /**

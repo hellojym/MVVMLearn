@@ -1,4 +1,4 @@
-package com.jym.mvvmlearn.model;
+package com.jym.mvvmlearn.entities;
 
 import androidx.databinding.ObservableField;
 
