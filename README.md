@@ -20,3 +20,9 @@
 * 在不考虑DataBinding时，ViewModel一般要跟LiveData结合使用，当数据发生变化时，通过LiveData的监听回调去修改相应的UI
 * 考虑DataBinding时，ViewModel里面存放的时ObservableField<>类型数据，会自动绑定UI和数据。此时LiveData可以用来做其他的事情，比如放到
 控制层，相应数据的变化。
+
+### 个人对jetpack mvvm框架的一些看法
+* 优点有很多，比如LiveData让数据变得像"活"了一样，通过回调函数可以做很多事情，而且不用担心内存泄漏。viewModel解决了Activity重建时的数据复用问题。DataBinding
+极大的扩展了xml的能力，同时，跟viewmodel结合，实现数据和UI绑定，避免了代码中findViewById繁琐的步骤,而且如果要更新UI，只需要更新数据即可。另外，代码量会减小，
+提高开发效率
+* 缺点的话：除了学习成本高，vm比较重，维护起来不容易,程序的复杂度较高,理解起来费劲。另外，ViewModel中不能用Context，很蛋疼。

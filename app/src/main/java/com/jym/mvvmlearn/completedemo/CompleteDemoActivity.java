@@ -1,7 +1,6 @@
 package com.jym.mvvmlearn.completedemo;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,13 +27,5 @@ public class CompleteDemoActivity extends AppCompatActivity {
         dataBinding.setProductVM(vm);
         //取数据
         vm.fetchData();
-
-
-        TextView discountTv = findViewById(R.id.discount);
-        vm.priceLiveData.observe(this, s -> {
-            float discount = Float.parseFloat(vm.productDetail.get().getDiscount());
-            String discountPrice = discount * s + "";
-            discountTv.setText(discountPrice);
-        });
     }
 }
