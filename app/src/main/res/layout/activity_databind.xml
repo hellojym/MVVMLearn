@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -24,20 +25,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="@={userInfo.name, default = jack}" />
+            android:text="@{userInfo.name, default = jack}" />
 
         <TextView
             android:id="@+id/user_age"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="@={userInfo.age, default = 12}" />
+            android:text="@{userInfo.age, default = 12}" />
 
         <Button
             android:id="@+id/change"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="change"/>
+            android:text="change" />
 
+        <TextView
+            android:id="@+id/bottom"
+            android:layout_width="100dp"
+            android:layout_height="30dp"
+            android:background="#f8e844"
+            android:gravity="center"
+            android:text="12345"
+            bind:textAppend='@{"-后缀"}' />
     </LinearLayout>
 </layout>

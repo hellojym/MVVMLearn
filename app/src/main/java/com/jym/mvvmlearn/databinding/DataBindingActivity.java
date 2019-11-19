@@ -1,9 +1,14 @@
 package com.jym.mvvmlearn.databinding;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 
 import com.jym.mvvmlearn.R;
@@ -25,13 +30,25 @@ public class DataBindingActivity extends AppCompatActivity {
 
         ActivityDatabindBinding activityDatabindBinding = DataBindingUtil.setContentView(this, R.layout.activity_databind);
         User user = new User();
-        user.age.set("10");
+        user.age.set("50");
         user.setName("马云");
         activityDatabindBinding.setUserInfo(user);
         findViewById(R.id.change).setOnClickListener(v -> {
-            user.age.set(new Random().nextInt() + "");
+            String random = new Random().nextInt() + "";
+            user.age.set(random);
         });
 
 
+    }
+
+    /**
+     * 给TextView添加后缀
+     * @param textView
+     * @param append
+     */
+    @SuppressLint("SetTextI18n")
+    @BindingAdapter("textAppend")
+    public static void append(TextView textView, String append) {
+        textView.setText(textView.getText() + append);
     }
 }
