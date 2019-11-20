@@ -26,6 +26,6 @@ public class CompleteDemoActivity extends AppCompatActivity {
         ActivityLayoutCompleteBinding dataBinding = DataBindingUtil.setContentView(this, R.layout.activity_layout_complete);
         dataBinding.setProductVM(vm);
         //取数据
-        vm.fetchData();
+        vm.getProductData().observe(this, vm::setProductDetail);
     }
 }

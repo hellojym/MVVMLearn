@@ -1,6 +1,9 @@
 package com.jym.mvvmlearn.completedemo;
 
+import android.util.Log;
+
 import androidx.databinding.ObservableField;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.jym.mvvmlearn.entities.Product;
@@ -13,32 +16,33 @@ import com.jym.mvvmlearn.entities.Product;
  */
 public class ProductViewModel extends ViewModel {
 
-    public ObservableField<Product> productDetail = new ObservableField<>();
+    private ObservableField<Product> productDetail = new ObservableField<>();
+    private LiveData<Product> productLiveData = null;
     private Repo mRepo = new Repo();
 
     /**
      * 模拟网络传输获取数据
      */
-    public void fetchData() {
-        try {
-            Thread.sleep(300);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+    public LiveData<Product> getProductData() {
+        if (productLiveData == null) {
+            productLiveData = mRepo.getProductDetail();
         }
-        //mock product
-        Product p = mRepo.getProductDetail();
-        productDetail.set(p);
+        return productLiveData;
     }
 
     /**
      * 模拟网络传提交数据
      */
     public void commitData() {
-        try {
-            Thread.sleep(300);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Log.d("MVVM", "提交数据");
         mRepo.commit();
+    }
+
+    public ObservableField<Product> getProductDetail() {
+        return productDetail;
+    }
+
+    public void setProductDetail(Product product) {
+        this.productDetail.set(product);
     }
 }
